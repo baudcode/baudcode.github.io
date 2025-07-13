@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>2025.07.13 deep learning setup on a budget - Blog</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- dark color palette -->
+<link href="../css/palettes/dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="../custom_styles.css" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/styles/a11y-dark.min.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/highlight.min.js"></script>
+    
+    <script src="https://unpkg.com/highlightjs-cobol/dist/cobol.min.js"></script>
+    
+    <script src="../add_hljs_highlight.js"></script>
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">Blog</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href=".." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="1">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Blog Posts</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../2025.07.08%20radxa%20camera/">2025.07.08 radxa camera</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">2025.07.13 deep learning setup on a budget</span>
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#why-and-constraints">Why and constraints</a></li>
+        <li><a href="#gpus">GPU/s</a></li>
+        <li><a href="#mainboard">Mainboard</a></li>
+        <li><a href="#cpu">CPU</a></li><li><a href="#cpu-cooler">CPU Cooler</a></li><li><a href="#ram">RAM</a></li><li><a href="#power-supply">Power Supply</a></li><li><a href="#storage">Storage</a></li>
+        <li><a href="#case">Case</a></li><li><a href="#parts-list">Parts List</a></li>
+        <li><a href="#future">Future</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <p>If you don't want to read why I choose the components - scoll till the end for the parts list.</p>
+<h1 id="why-and-constraints">Why and constraints<a class="headerlink" href="#why-and-constraints" title="Permanent link">#</a></h1>
+<p>My current setup for deep learning is kinda old and I am not able to use the latest features that the RTX generation offers. Looking at the energy prices in germany/berlin I don't want to have a single gpu drawing 400+ W of power (as that increases the noise level tremendously because of the cooling that needs to happen). We have a 3090 in the office and it blows air like a vacum cleaner (it does not have a blower design...). And at the same time I don't want to be limitted to just 12 GB or less of VRAM. The setup also should not cost more than 4000 Euros. Because I train smaller models quite often as well I could live with a dual-gpu setup which offers the best of both worlds. I could use the second gpu whenever I needed to to have more VRAM. Based on the benchmarks I found the performance-loss would be minimal. </p>
+<h1 id="gpus">GPU/s<a class="headerlink" href="#gpus" title="Permanent link">#</a></h1>
+<blockquote>
+<p>2 x <strong>RTX 5070 Ti</strong> (ZOTAC GeForce RTX 5070 Ti SOLID OC SFF)</p>
+</blockquote>
+<ul>
+<li>16 GB VRAM (32 GB total)</li>
+<li>896 GB/sec memory bandwidth (and can be overclocked to over 1000 GB/sec - almost identical to 4090)</li>
+<li>&lt;300W Power (can actually be undervolted to ~220W with minimal performance degradation)</li>
+<li>DLSS (for rendering)</li>
+<li>SFF Form Factor and decent noise level (to fit 2 gpus inside my motherboard)</li>
+</ul>
+<h1 id="mainboard">Mainboard<a class="headerlink" href="#mainboard" title="Permanent link">#</a></h1>
+<blockquote>
+<p>ASUS PROART X870E-CREATOR WIFI</p>
+</blockquote>
+<p>To get the most speed out of 5000er series Nvidia GPUS, pcie 5.0 is needed and for a dual gpu setup I want at least 8x 8x pcie speeds for a dual setup (this would be the same speed for both on pcie 4.0 16x). Its quite challenging to find a motherboard that supports this. Many motherboards actually reduce the speed of the pcie 16x when you connect an nvme drive via pcie 5.0 because they share the pcie lanes.
+The chosen motherboard includes:</p>
+<ul>
+<li>AM5 Sockel    </li>
+<li>2x PCIe 5.0 x16 (1x x16, 1x x8) [x16/​x0 oder x8/​x8], 1x PCIe 4.0 x16 (x4)</li>
+<li>2x M.2/​M-Key (PCIe 5.0 x4) | 1x M.2/​M-Key (PCIe 4.0 x4, 2280/​2260/​2242), 1x M.2/​M-Key (PCIe 4.0 x4, 22110/​2280/​2260/​2242)</li>
+<li>4x SATA 6Gb/s</li>
+<li>1x USB 3.2 Header Key-A (20Gb/​s, PD-Out 30W, QC4+, 1x USB-C)</li>
+<li>10 and 2.5 Gbit networking</li>
+<li>Wi-Fi 7</li>
+</ul>
+<h3 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">#</a></h3>
+<blockquote>
+<p>AMD Ryzen 9 9950X</p>
+</blockquote>
+<p>I was not able to choose a Threadripper based setup as that would already (mainboard + cpu) almost kill my budget - so I settled with the second best consumer AMD CPU with 16 cores (32 threads). For me the extra ~150 Euro for the 9950X3D are not worth it as benchmarks only show a minimal increase in performance.</p>
+<h3 id="cpu-cooler">CPU Cooler<a class="headerlink" href="#cpu-cooler" title="Permanent link">#</a></h3>
+<blockquote>
+<p>ARCTIC Liquid Freezer III Pro 360</p>
+</blockquote>
+<p>I want liquid cooling for the CPU as I've had good experience with that in the past. The chosen cooler seems to perform quite well for &lt;100 Euros and should keep temps decent. </p>
+<h3 id="ram">RAM<a class="headerlink" href="#ram" title="Permanent link">#</a></h3>
+<blockquote>
+<p>CRUCIAL Pro DDR5-6400 Kit 2x32GB UDIMM CL40 Overclocking</p>
+</blockquote>
+<p>I could get 64 GB 6400 Mhz DDR5 for around 169 euros. I coulnd't say no :). The motherboard offers to upgrade to 128 GB if I buy a second set of these. I did not care about error correction and according to <a href="https://www.pcmasters.de/testbericht/133713820-crucial-pro-overclocking-ddr5-6400-test-review.html">sources</a> I would be able to overclock it to 7000 Mhz.  </p>
+<h3 id="power-supply">Power Supply<a class="headerlink" href="#power-supply" title="Permanent link">#</a></h3>
+<blockquote>
+<p>MSI MPG A1250GS PCIE5 1250W ATX 3.1</p>
+</blockquote>
+<p>1000W are not enough for 2 RTX 5070 Tis. I came to the following conclusion for maximum power draw:</p>
+<ul>
+<li>GPUS: 432 * 2 = 864 W (<a href="https://www.msi.com/blog/best-psu-for-rtx-5070Ti">Ref</a>)</li>
+<li>CPU: 200 W (<a href="https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/4">Ref</a>)</li>
+<li>Mainboard + RAM: Unknown (estimated 50-100W)</li>
+<li>Drives &amp; Fans ~= 50 W</li>
+<li>Headroom: 100 - 150W</li>
+</ul>
+<p>This specific power supply has 2x 16-Pin PCIe 5.1 12V-2x6 which supports 600W for 2 gpus. Plus it has a power excursion of 2937W (*up to 235% of the PSU's rated power for 100μs) which should be enough to cover all the power spikes. </p>
+<h1 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">#</a></h1>
+<blockquote>
+<p>1x 2TB PCIE 5.0 (Linux, deep learning + datasets)
+1x 1TB PCIE 4.0 (Windows, Gaming / Rendering)</p>
+</blockquote>
+<p>For generating datasets and heavy data processing i will use linux on the 2TB drive and an additional 1 TB drive for dual boot with windows for some games and dataset creation. 
+Probably that kind of storage won't be enough for the future, fortuantely the mainboard offers many more pcie slots of expansion of storage.</p>
+<h3 id="case">Case<a class="headerlink" href="#case" title="Permanent link">#</a></h3>
+<p>I will just keep it open for now on my desk. But later will probably add a case or reuse one that I have at home. </p>
+<h1 id="parts-list">Parts List<a class="headerlink" href="#parts-list" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Part</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPUS</td>
+<td>2x ZOTAC GeForce RTX 5070 Ti SOLID OC SFF</td>
+<td>1.718,00 €</td>
+</tr>
+<tr>
+<td>Mainboard</td>
+<td>ASUS PROART X870E-CREATOR WIFI</td>
+<td>461 €</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>CRUCIAL Pro DDR5-6400 Kit 2x32GB UDIMM CL40 OC</td>
+<td>169,19 €</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>AMD Ryzen 9 9950X</td>
+<td>514 €</td>
+</tr>
+<tr>
+<td>Power Supply</td>
+<td>MSI MPG A1250GS PCIE5 1250W ATX 3.1</td>
+<td>235,90 €</td>
+</tr>
+<tr>
+<td>NVME SSD</td>
+<td>WD SN7100 1 TB (PCIe 4.0)</td>
+<td>74,90 €</td>
+</tr>
+<tr>
+<td>NVME SSD</td>
+<td>Lexar NM1090 PRO 2TB (PCIe 5.0)</td>
+<td>189,99 €</td>
+</tr>
+<tr>
+<td>CPU cooling</td>
+<td>ARCTIC Liquid Freezer III Pro 360</td>
+<td>84,59€</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>Build</td>
+<td>3447.57 €</td>
+</tr>
+</tbody>
+</table>
+<h1 id="future">Future<a class="headerlink" href="#future" title="Permanent link">#</a></h1>
+<p>I will show more deep learning benchmarks on this PC in the future including multi-gpu training / inference. </p>
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2025-07-13. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>
