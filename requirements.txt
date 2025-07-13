@@ -1,0 +1,6 @@
+mkdocs-section-index
+mkdocs
+mkdocs-git-revision-date-plugin
+pymdown-extensions
+mkdocs-literate-nav
+mkdocs-terminal

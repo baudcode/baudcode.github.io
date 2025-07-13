@@ -1,0 +1,50 @@
+
+site_name: Blog
+nav:
+  - Home: 'index.md'
+  - Blog Posts: '*.md'
+markdown_extensions:
+  # Python Markdown  
+  - attr_list
+  - md_in_html
+  - meta
+  - def_list
+  - footnotes
+  - toc:
+      permalink: "#"
+  - pymdownx.blocks.details:
+      types:
+        - name: info
+          class: terminal-alert
+          title: Info
+        - name: warn
+          class: 'terminal-alert terminal-alert-error'
+          title: Warning
+        - name: important
+          class: 'terminal-alert terminal-alert-primary'
+          title: Important
+plugins:
+  - md-to-html
+  - search
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - git-revision-date
+  # - section-index
+extra_css:
+  - custom_styles.css
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/styles/a11y-dark.min.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/highlight.min.js
+  - https://unpkg.com/highlightjs-cobol/dist/cobol.min.js
+  - add_hljs_highlight.js
+theme:
+  # name: simple-blog
+  include_sidebar: false
+  # nav:
+  # - Home: index.md
+  # - About: about.md
+  name: terminal
+  locale: en
+  palette: dark
+  features:
+    - revision.date
